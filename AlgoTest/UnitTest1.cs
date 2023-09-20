@@ -41,7 +41,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void There_An_Index_In_Array_CurseBinarySearch()
+        public void There_An_Index_In_Array_InterpolationSearch()
         {
             //arrange
             int[] array = { -3, 0, 1, 3, 4, 5, 7, 8, 12 };
@@ -50,7 +50,7 @@ namespace AlgoTest
             var value = 4;
 
             //act
-            int returned_index = Algorithm.CurseBinarySearch(array, value);           
+            int returned_index = Algorithm.InterpolationSearch(array, value);           
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -102,7 +102,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void First_Index_In_Array_CurseBinarySearch()
+        public void First_Index_In_Array_InterpolationSearch()
         {
             //arrange
             int[] array = { -1, -1, -1, -1, -1, -1, -1, -1, -1 };
@@ -110,7 +110,7 @@ namespace AlgoTest
             var value = -1;
 
             //act
-            int returned_index = Algorithm.CurseBinarySearch(array, value);
+            int returned_index = Algorithm.InterpolationSearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -177,7 +177,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void Last_Index_In_Array_CurseBinarySearch()
+        public void Last_Index_In_Array_InterpolationSearch()
         {
             //arrange
             int[] array = { -3, 0, 1, 3, 4, 5, 7, 8, 12 };
@@ -185,7 +185,7 @@ namespace AlgoTest
             var value = 12;
 
             //act
-            int returned_index = Algorithm.CurseBinarySearch(array, value);
+            int returned_index = Algorithm.InterpolationSearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -252,7 +252,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void There_Is_No_Index_In_Array_CurseBinarySearch()
+        public void There_Is_No_Index_In_Array_InterpolationSearch()
         {
             //arange
             int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -260,7 +260,7 @@ namespace AlgoTest
             var value = 11;
 
             //act
-            int returned_index = Algorithm.CurseBinarySearch(array, value);
+            int returned_index = Algorithm.InterpolationSearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -276,21 +276,6 @@ namespace AlgoTest
 
             //act
             int returned_index = Algorithm.CurseJumpSearch(array, value);
-
-            //assert
-            Assert.AreEqual(index, returned_index);
-        }
-
-        [TestMethod]
-        public void There_Is_No_Index_In_Array_InterpolationSearch()
-        {
-            //arange
-            int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int index = -1;
-            var value = 11;
-
-            //act
-            int returned_index = Algorithm.AntiCurseFastLineSearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);

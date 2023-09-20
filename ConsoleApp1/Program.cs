@@ -32,18 +32,23 @@ namespace Algoritms
 
                 StartTest(Algorithm.AntiCurseLineSearch, anticoursemass, findelement, out timeWork, out index);
                 Console.WriteLine("Индекс линейного поиска в неупорядоченном массиве - {0}", Algorithm.AntiCurseLineSearch(anticoursemass, findelement));
+                Console.WriteLine("Время работы линейного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.AntiCurseFastLineSearch, anticoursemass, findelement, out timeWork, out index);
                 Console.WriteLine("Индекс быстрого линейного поиска в неупорядоченном массиве - {0}", Algorithm.AntiCurseFastLineSearch(anticoursemass, findelement));
+                Console.WriteLine("Время работы быстрого линейного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.CurseFastLineSearch, coursemass, findelement, out timeWork, out index);
                 Console.WriteLine("Индекс быстрого линейного поиска в упорядоченном массиве - {0}", Algorithm.CurseFastLineSearch(coursemass, findelement));
+                Console.WriteLine("Время работы быстрого линейного алгоритма поиска: {0}", timeWork);
 
-                StartTest(Algorithm.CurseBinarySearch, coursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс бинарного поиска в упорядоченном массиве - {0}", Algorithm.CurseBinarySearch(coursemass, findelement));
+                StartTest(Algorithm.InterpolationSearch, coursemass, findelement, out timeWork, out index);
+                Console.WriteLine("Индекс интерполяционного поиска в упорядоченном массиве - {0}", Algorithm.InterpolationSearch(coursemass, findelement));
+                Console.WriteLine("Время работы интерполяционного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.CurseJumpSearch, coursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс поиска прыжками в упорядоченном массиве - {0}\n", Algorithm.CurseJumpSearch(coursemass, findelement));
+                Console.WriteLine("Индекс поиска прыжками в упорядоченном массиве - {0}", Algorithm.CurseJumpSearch(coursemass, findelement));
+                Console.WriteLine("Время работы алгоритма поиска прыжками: {0}\n", timeWork);
 
             }
             Console.ReadLine();

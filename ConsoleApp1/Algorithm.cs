@@ -62,33 +62,41 @@ namespace Algorithms
             }
             return -1;
         }
-        public static int CurseBinarySearch(int[] mass, int element)
+        public static int InterpolationSearch(int[] mass, int element) // Временная O(log log N); Пространственная O(1)
         {
-            int x = -1;
-            int left = 0;
-            int right = mass.Length - 1;
-
-            while (left <= right)
+            if (mass[0] == element)
             {
-                int mid = (left + right) / 2;
+                return 0;
+            }
+            if (mass[mass.Length - 1] == element)
+            {
+                return mass.Length - 1;
+            }
 
-                if (mass[mid] == element)
+            int startIndex = 0;
+            int lastIndex = (mass.Length - 1);
+
+            while ((startIndex <= lastIndex) && (element >= mass[startIndex]) &&
+                   (element <= mass[lastIndex]))
+            {
+                int position = Math.Abs(startIndex + ((element - mass[startIndex]) * (lastIndex - startIndex) /
+                  (mass[lastIndex] - mass[startIndex])));
+
+                if (mass[position] == element)
                 {
-                    x = mid;
-                    right = mid - 1;
+                    return position;
                 }
 
-                else if (mass[mid] < element)
+                if (mass[position] < element)
                 {
-                    left = mid + 1;
+                    startIndex = position + 1;
                 }
-
-                else if (mass[mid] > element)
+                else
                 {
-                    right = mid - 1;
+                    lastIndex = position - 1;
                 }
             }
-            return x;
+            return -1;
         }
         public static int CurseJumpSearch(int[] mass, int element)
         {
