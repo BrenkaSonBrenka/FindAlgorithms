@@ -22,13 +22,13 @@ namespace Algoritms
             {
                 Console.WriteLine("Количество элементов в массиве - {0}\n", currentLength);
 
-                int findelement = rand.Next(0, currentLength + 1);
+                int findelement = rand.Next(0, currentLength);
                 int[] coursemass = new int[currentLength];
                 for (int i = 0; i < coursemass.Length; i++)
                     coursemass[i] = i + 1;
                 int[] anticoursemass = new int[currentLength];
                 for (int i = 0; i < anticoursemass.Length; i++)
-                    anticoursemass[i] = rand.Next(0, anticoursemass.Length + 1);
+                    anticoursemass[i] = rand.Next(1, anticoursemass.Length + 1);
 
                 StartTest(Algorithm.AntiCurseLineSearch, anticoursemass, findelement, out timeWork, out index);
                 Console.WriteLine("Индекс линейного поиска в неупорядоченном массиве - {0}", Algorithm.AntiCurseLineSearch(anticoursemass, findelement));
