@@ -47,20 +47,33 @@ namespace Algorithms
             }
             return -1;
         }
-        public static int CurseFastLineSearch(int[] mass, int element)
+        public static int CurseBinarySearch(int[] mass, int element)
         {
-            for (int i = 0; i < mass.Length; i++)
+            int result = -1;
+            int left = 0;
+            int right = mass.Length - 1;
+
+            while (left <= right)
             {
-                if (mass[i] > element)
+                int mid = (left + right) / 2;
+
+                if (mass[mid] == element)
                 {
-                    return -1;
+                    result = mid;
+                    right = mid - 1;
                 }
-                else if (mass[i] == element)
+
+                else if (mass[mid] < element)
                 {
-                    return i;
+                    left = mid + 1;
+                }
+
+                else if (mass[mid] > element)
+                {
+                    right = mid - 1;
                 }
             }
-            return -1;
+            return result;
         }
         public static int InterpolationSearch(int[] mass, int element) // Временная O(log log N); Пространственная O(1)
         {

@@ -17,7 +17,7 @@ namespace Algoritms
             Random rand = new Random();
             int index;
             double timeWork;
-            List<int> Length = new List<int> { 10000, 20000, 30000, 40000, 50000, 100000, 200000 };
+            List<int> Length = new List<int> { 1000, 2000, 3000, 4000, 5000, 10000, 20000 };
             foreach (var currentLength in Length)
             {
                 Console.WriteLine("Количество элементов в массиве - {0}\n", currentLength);
@@ -30,24 +30,20 @@ namespace Algoritms
                 for (int i = 0; i < anticoursemass.Length; i++)
                     anticoursemass[i] = rand.Next(1, anticoursemass.Length + 1);
 
+                Console.WriteLine("Искомый элемент {0}", findelement);
                 StartTest(Algorithm.AntiCurseLineSearch, anticoursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс линейного поиска в неупорядоченном массиве - {0}", Algorithm.AntiCurseLineSearch(anticoursemass, findelement));
                 Console.WriteLine("Время работы линейного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.AntiCurseFastLineSearch, anticoursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс быстрого линейного поиска в неупорядоченном массиве - {0}", Algorithm.AntiCurseFastLineSearch(anticoursemass, findelement));
                 Console.WriteLine("Время работы быстрого линейного алгоритма поиска: {0}", timeWork);
 
-                StartTest(Algorithm.CurseFastLineSearch, coursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс быстрого линейного поиска в упорядоченном массиве - {0}", Algorithm.CurseFastLineSearch(coursemass, findelement));
-                Console.WriteLine("Время работы быстрого линейного алгоритма поиска: {0}", timeWork);
+                StartTest(Algorithm.CurseBinarySearch, coursemass, findelement, out timeWork, out index);
+                Console.WriteLine("Время работы двоичного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.InterpolationSearch, coursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс интерполяционного поиска в упорядоченном массиве - {0}", Algorithm.InterpolationSearch(coursemass, findelement));
                 Console.WriteLine("Время работы интерполяционного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.CurseJumpSearch, coursemass, findelement, out timeWork, out index);
-                Console.WriteLine("Индекс поиска прыжками в упорядоченном массиве - {0}", Algorithm.CurseJumpSearch(coursemass, findelement));
                 Console.WriteLine("Время работы алгоритма поиска прыжками: {0}\n", timeWork);
 
             }

@@ -26,7 +26,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void There_An_Index_In_Array_CurseFastLineSearch()
+        public void There_An_Index_In_Array_CurseBinarySearch()
         {
             //arrange
             int[] array = { -3, 0, 1, 3, 4, 5, 7, 8, 12 };
@@ -34,7 +34,7 @@ namespace AlgoTest
             var value = 4;
 
             //act
-            int returned_index = Algorithm.CurseFastLineSearch(array, value);
+            int returned_index = Algorithm.CurseBinarySearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -87,7 +87,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void First_Index_In_Array_CurseFastLineSearch()
+        public void First_Index_In_Array_CurseBinarySearch()
         {
             //arrange
             int[] array = { -2, -1, -1, 3, 4, 5, 7, 8, 12 };
@@ -95,7 +95,7 @@ namespace AlgoTest
             var value = -1;
 
             //act
-            int returned_index = Algorithm.CurseFastLineSearch(array, value);
+            int returned_index = Algorithm.CurseBinarySearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -162,7 +162,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void Last_Index_In_Array_CurseFastLineSearch()
+        public void Last_Index_In_Array_CurseBinarySearch()
         {
             //arrange
             int[] array = { -3, 0, 1, 3, 4, 5, 7, 8, 12 };
@@ -170,7 +170,7 @@ namespace AlgoTest
             var value = 12;
 
             //act
-            int returned_index = Algorithm.CurseFastLineSearch(array, value);
+            int returned_index = Algorithm.CurseBinarySearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
@@ -237,7 +237,7 @@ namespace AlgoTest
         }
 
         [TestMethod]
-        public void There_Is_No_Index_In_Array_CurseFastLineSearch()
+        public void There_Is_No_Index_In_Array_CurseBinarySearch()
         {
             //arange
             int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -245,7 +245,7 @@ namespace AlgoTest
             var value = 11;
 
             //act
-            int returned_index = Algorithm.CurseFastLineSearch(array, value);
+            int returned_index = Algorithm.CurseBinarySearch(array, value);
 
             //assert
             Assert.AreEqual(index, returned_index);
