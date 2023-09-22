@@ -40,7 +40,7 @@ namespace Algoritms
                 StartTest(Algorithm.CurseBinarySearch, coursemass, findelement, out timeWork, out index);
                 Console.WriteLine("Время работы двоичного алгоритма поиска: {0}", timeWork);
 
-                StartTest(Algorithm.InterpolationSearch, coursemass, findelement, out timeWork, out index);
+                StartTest(Algorithm.CurseInterpolationSearch, coursemass, findelement, out timeWork, out index);
                 Console.WriteLine("Время работы интерполяционного алгоритма поиска: {0}", timeWork);
 
                 StartTest(Algorithm.CurseJumpSearch, coursemass, findelement, out timeWork, out index);

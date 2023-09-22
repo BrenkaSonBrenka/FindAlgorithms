@@ -75,7 +75,7 @@ namespace Algorithms
             }
             return result;
         }
-        public static int InterpolationSearch(int[] mass, int element) // Временная O(log log N); Пространственная O(1)
+        public static int CurseInterpolationSearch(int[] mass, int element) // Временная O(log log N); Пространственная O(1)
         {
             if (mass[0] == element)
             {
